@@ -11,6 +11,10 @@
   <%= @portfolio.description %>
 </p>
 
+<% if current_user == @portfolio.user %>
+  <%= render 'trade', portfolio: @portfolio %>
+<% end %>
+
 <p>
   <strong>Portfolio Manager:</strong>
   <%= @portfolio.user.username %>

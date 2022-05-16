@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_16_201611) do
+ActiveRecord::Schema.define(version: 2022_05_16_224527) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "citext"
@@ -44,6 +44,17 @@ ActiveRecord::Schema.define(version: 2022_05_16_201611) do
     t.index ["portfolio_id"], name: "index_posts_on_portfolio_id"
   end
 
+  create_table "trades", force: :cascade do |t|
+    t.bigint "asset_id", null: false
+    t.bigint "portfolio_id", null: false
+    t.float "quantity"
+    t.float "price"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["asset_id"], name: "index_trades_on_asset_id"
+    t.index ["portfolio_id"], name: "index_trades_on_portfolio_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.citext "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -62,4 +73,6 @@ ActiveRecord::Schema.define(version: 2022_05_16_201611) do
   end
 
   add_foreign_key "portfolios", "users"
+  add_foreign_key "trades", "assets"
+  add_foreign_key "trades", "portfolios"
 end
