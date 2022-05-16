@@ -1,18 +1,19 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
-  <%= @portfolio.name %>
+  <strong>
+    <%= @portfolio.name %>
+  </strong>
 </p>
 
 <p>
-  <strong>Description:</strong>
+  <strong>About:</strong>
   <%= @portfolio.description %>
 </p>
 
 <p>
   <strong>User:</strong>
-  <%= @portfolio.user_id %>
+  <%= @portfolio.username %>
 </p>
 
 <%= link_to 'Edit', edit_portfolio_path(@portfolio) %> |

@@ -10,11 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_16_194320) do
+ActiveRecord::Schema.define(version: 2022_05_16_201611) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "citext"
   enable_extension "plpgsql"
+
+  create_table "assets", force: :cascade do |t|
+    t.string "ticker"
+    t.string "name"
+    t.string "type"
+    t.string "image_url"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "portfolios", force: :cascade do |t|
     t.string "name", null: false
@@ -23,6 +32,16 @@ ActiveRecord::Schema.define(version: 2022_05_16_194320) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_portfolios_on_user_id"
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.text "title"
+    t.text "body"
+    t.bigint "portfolio_id"
+    t.string "image_url"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["portfolio_id"], name: "index_posts_on_portfolio_id"
   end
 
   create_table "users", force: :cascade do |t|
