@@ -12,9 +12,11 @@
 </p>
 
 <p>
-  <strong>User:</strong>
-  <%= @portfolio.username %>
+  <strong>Portfolio Manager:</strong>
+  <%= @portfolio.user.username %>
 </p>
+
+<%= image_tag @portfolio.user.image_url, class: "rounded-circle mr-3", width: 50 %>
 
 <%= link_to 'Edit', edit_portfolio_path(@portfolio) %> |
 <%= link_to 'Back', portfolios_path %>
