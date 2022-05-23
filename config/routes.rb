@@ -2,10 +2,13 @@ Rails.application.routes.draw do
 
   root "portfolios#index"
 
+  get "trades/index" => "trades#index"
+
   devise_for :users
   resources :posts
   resources :portfolios
   resources :assets
+
 
   get ":trades/new" => "trades#new"
 
