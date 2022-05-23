@@ -1,2 +1,51 @@
-<%= @portfolio.holdings %>
+<table class="table table-sm table-hover shadow" >
+  <thead>
+    <tr>
+      <th>
+        Asset
+      </th>
+      
+      <th>
+        Ticker
+      </th>
 
+      <th>
+        Quantity Held
+      </th>
+
+      <th>
+        Current Price
+      </th>
+      
+      <th>
+        Market Value
+      </th>
+
+      <th>
+        Exposure
+      </th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <% @holdings.sort_by { |hsh| hsh[:market_value] }.reverse.each do |h| %>
+    <tr>
+      <td>
+        <%= h[:asset].name %></a>
+      </td>
+       <td>
+        <%= h[:asset].ticker %></a>
+      </td>
+      <td>
+        <%= h[:quantity] %></a>
+      </td>
+      <td>
+        <%= number_to_currency(h[:current_price]) %></a>
+      </td>
+      <td>
+        <%= number_to_currency(h[:market_value]) %></a>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

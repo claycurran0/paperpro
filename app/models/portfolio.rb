@@ -37,8 +37,15 @@ class Portfolio < ApplicationRecord
       ticker = h[:asset].ticker
       price = quotes[ticker]['regularMarketPrice']
       h[:current_price] = price
+      h[:market_value] = price * h[:quantity]
     end
 
     return holdings
   end
+
+  def market_value(holdings)
+    market_value = holdings.map { |h| h[:market_value] }.sum
+    return market_value
+  end
+
 end

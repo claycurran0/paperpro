@@ -1,3 +1,6 @@
+<% @holdings = @portfolio.holdings %>
+<% @market_value = @portfolio.market_value(@holdings)%>
+
 <% if current_user == @portfolio.user %>
   <%= render 'shared/trade', portfolio: @portfolio %>
 <% end %>
@@ -23,7 +26,19 @@
   <%= @portfolio.description %>
 </p>
 
-Current Cash Balance: <%= number_to_currency(@portfolio.cash_balance) %>
+<p>
+  <ul>
+    <li>
+      Current Cash Balance: <%= number_to_currency(@portfolio.cash_balance) %>   
+    </li>
+    <li>
+      Market Value of Holdings: <%= number_to_currency(@market_value) %>
+    </li>
+    <li>
+      Portfolio Value: <%= number_to_currency(@market_value + @portfolio.cash_balance) %>
+    </li>
+  </ul>
+</p>
 
 <h2> Holdings </h2>
 
