@@ -2,10 +2,20 @@
   <%= render 'shared/trade', portfolio: @portfolio %>
 <% end %>
 
+<h1>
+    <strong>
+      <%= @portfolio.name %>
+    </strong>
+</h1>
+
+
 <p>
-  <strong>
-    <%= @portfolio.name %>
-  </strong>
+  <strong>Portfolio Manager:</strong>
+  <%= @portfolio.user.username %>
+</p>
+
+<p>
+  <%= image_tag @portfolio.user.image_url, class: "rounded-circle mr-3", width: 50 %>
 </p>
 
 <p>
@@ -13,12 +23,13 @@
   <%= @portfolio.description %>
 </p>
 
+Current Cash Balance: <%= number_to_currency(@portfolio.cash_balance) %>
+
+<h2> Holdings </h2>
+
+<%= render 'holdings', portfolio: @portfolio %>
+
 <p>
-  <strong>Portfolio Manager:</strong>
-  <%= @portfolio.user.username %>
+  <%= link_to 'Edit', edit_portfolio_path(@portfolio) %> |
+  <%= link_to 'Back', portfolios_path %>
 </p>
-
-<%= image_tag @portfolio.user.image_url, class: "rounded-circle mr-3", width: 50 %>
-
-<%= link_to 'Edit', edit_portfolio_path(@portfolio) %> |
-<%= link_to 'Back', portfolios_path %>
