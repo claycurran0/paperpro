@@ -1,4 +1,6 @@
-<p id="notice"><%= notice %></p>
+<% if current_user == @portfolio.user %>
+  <%= render 'shared/trade', portfolio: @portfolio %>
+<% end %>
 
 <p>
   <strong>
@@ -10,10 +12,6 @@
   <strong>About:</strong>
   <%= @portfolio.description %>
 </p>
-
-<% if current_user == @portfolio.user %>
-  <%= render 'trade', portfolio: @portfolio %>
-<% end %>
 
 <p>
   <strong>Portfolio Manager:</strong>

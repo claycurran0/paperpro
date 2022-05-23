@@ -80,6 +80,8 @@ GEM
     ansispan (0.0.1)
     ast (2.4.2)
     awesome_print (1.9.2)
+    basic_yahoo_finance (0.3.0)
+      redis (~> 4.2)
     bcrypt (3.1.17)
     better_errors (2.9.1)
       coderay (>= 1.0.0)
@@ -214,6 +216,7 @@ GEM
     rb-inotify (0.10.1)
       ffi (~> 1.0)
     rchardet (1.8.0)
+    redis (4.6.0)
     regexp_parser (2.2.1)
     responders (3.0.1)
       actionpack (>= 5.0)
@@ -319,6 +322,7 @@ PLATFORMS
 DEPENDENCIES
   annotate
   awesome_print
+  basic_yahoo_finance
   better_errors
   binding_of_caller
   bootsnap (>= 1.4.4)
