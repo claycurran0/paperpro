@@ -1,3 +1,19 @@
+<h2> Summary </h2>
+
+<p>
+  <ul>
+    <li>
+      Current Cash Balance: <%= number_to_currency(@portfolio.cash_balance) %>   
+    </li>
+    <li>
+      Market Value of Holdings: <%= number_to_currency(@market_value) %>
+    </li>
+    <li>
+      Portfolio Value: <%= number_to_currency(@market_value + @portfolio.cash_balance) %>
+    </li>
+  </ul>
+</p>
+
 <table class="table table-sm table-hover shadow" >
   <thead>
     <tr>

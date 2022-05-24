@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_23_200359) do
+ActiveRecord::Schema.define(version: 2022_05_24_201328) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "citext"
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 2022_05_23_200359) do
     t.string "image_url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.text "subtitle"
     t.index ["portfolio_id"], name: "index_posts_on_portfolio_id"
   end
 

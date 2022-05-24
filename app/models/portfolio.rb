@@ -1,6 +1,7 @@
 class Portfolio < ApplicationRecord
   belongs_to :user
   has_many :trades
+  has_many :posts
 
   def cash_balance
     balance = 1000000
