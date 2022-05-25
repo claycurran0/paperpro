@@ -13,3 +13,12 @@
  *= require_tree .
  *= require_self
  */
+
+.post-timestamp {
+  color: red;
+}
+
+.post-body {
+  padding-top: 10px;
+  font-family: serif;
+}

@@ -5,13 +5,17 @@
   <%= render 'shared/trade', portfolio: @portfolio %>
 <% end %>
 
-<h1>
-  <strong>
-    <%= @portfolio.name %>
-  </strong>
-</h1>
+<div>
+  <h1>
+    <strong>
+      <%= @portfolio.name %>
+    </strong>
+  </h1>
+</div>
 
-<%= render 'navbar', portfolio: @portfolio %>
+<div class="pt-3">
+  <%= render 'navbar', portfolio: @portfolio %>
+</div>
 
 <p>
   <%= link_to 'Edit', edit_portfolio_path(@portfolio) %> |
