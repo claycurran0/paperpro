@@ -1,0 +1,6 @@
+<div class="container p-4">
+  <div class="d-flex align-items-center pb-3">
+    <%= image_tag portfolio.user.image_url, class: "rounded-circle", width: 50, height: 50 %>
+    <div class="about-pane-body p-2 font-weight-bold">@<%= link_to portfolio.user.username.downcase, portfolio.user.username %></div>
+  </div>
+</div>

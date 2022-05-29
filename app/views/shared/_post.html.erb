@@ -3,13 +3,14 @@
     <h5 class="card-title discover-title"><%= link_to post.title, post %></h5>
     <div class="d-flex align-items-center pb-3">
       <%= image_tag post.author.image_url, class: "rounded-circle", width: 20, height: 20 %>
-      <div class="text-muted card-username p-1">@<%= post.author.username.downcase %></div>
+      <div class="text-muted card-username p-1">@<%= link_to post.author.username.downcase, post.author.username %></div>
     </div>
-    <p class="card-text text-muted dm-sans"><%= post.subtitle %></p>
-    <div class="post-timestamp dm-sans float-right">
-      <p>
+    <div class="card-text text-muted dm-sans"><%= post.subtitle %></div>
+    <div class="post-timestamp float-right">
+      <div class="pt-2 pb-2">
+        <i class="far fa-clock fa-fw"></i></i>
         <%= time_ago_in_words(post.created_at) %> ago
-      </p>
+      </div>
     </div>
   </div>
 </div>

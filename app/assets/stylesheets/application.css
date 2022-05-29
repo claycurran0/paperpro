@@ -19,6 +19,7 @@
 
 .post-timestamp {
   color: red;
+  font-size: 12px;
 }
 
 .post-body {
@@ -28,7 +29,7 @@
 
 .writing {
   font-family: 'Frank Ruhl Libre';
-  font-size: 23px;
+  font-size: 21px;
 }
 
 .discover-title {
@@ -36,6 +37,7 @@
   font-size: 23px;
   font-weight: bold;
   color:black;
+  text-decoration: none;
 }
 
 .contest-title {
@@ -50,18 +52,44 @@
   font-size: 15px;
 }
 
+.dm-sans-sm {
+  font-family: 'DM Sans';
+  font-size: 12px;
+}
+
 .card-username {
   font-family: 'DM Sans';
   font-size: 12px;
   font-weight: bold;
 }
 
+.about-pane-body {
+  font-family: 'DM Sans';
+  font-size: 22px;
+}
+
 .body {
   font-family: 'DM Sans';
+}
+
+.frank-ruhl-libre {
+  font-family: 'Frank Ruhl Libre';
+}
+
+.frank-ruhl-libre-lg {
+  font-family: 'Frank Ruhl Libre';
+  font-size: 25px !important;
 }
 
 .homepage-titles {
   font-family: 'DM Sans';
   font-size: 23px;
   font-weight: bold;
+}
+
+.form-query {
+  border-radius: 33px !important;
+  height: 36px !important;
+  width: 500px !important;
+  font-size: 14px !important;
 }

@@ -4,27 +4,37 @@
 <% @marks = @portfolio.marks(quotes) %>
 <% @market_value = @portfolio.market_value(@marks) %>
 
-<% if current_user == @portfolio.user %>
-  <div class="float-right">
-    <%= render 'shared/trade', portfolio: @portfolio %>
-    <%= render 'shared/blog', portfolio: @portfolio %>
+<div class="d-flex flex-row">
+  <div class="col-md-8">
+
+    <% if current_user == @portfolio.user %>
+      <div class="float-right">
+        <%= render 'shared/trade', portfolio: @portfolio %>
+        <%= render 'shared/blog', portfolio: @portfolio %>
+      </div>
+    <% end %>
+
+    <div>
+      <h1>
+        <strong>
+          <%= @portfolio.name %>
+        </strong>
+      </h1>
+    </div>
+
+    <div class="pt-3">
+      <%= render 'navbar', portfolio: @portfolio %>
+    </div>
+
+    <p>
+      <%= link_to 'Edit', edit_portfolio_path(@portfolio) %> |
+      <%= link_to 'Back', portfolios_path %> |
+      <%= link_to 'Delete Portfolio', @portfolio, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </p>
+
   </div>
-<% end %>
 
-<div>
-  <h1>
-    <strong>
-      <%= @portfolio.name %>
-    </strong>
-  </h1>
+  <div class="col-6 col-md-4 border-left">
+    <%= render 'shared/aboutpane', portfolio: @portfolio %>
+  </div>
 </div>
-
-<div class="pt-3">
-  <%= render 'navbar', portfolio: @portfolio %>
-</div>
-
-<p>
-  <%= link_to 'Edit', edit_portfolio_path(@portfolio) %> |
-  <%= link_to 'Back', portfolios_path %> |
-  <%= link_to 'Delete Portfolio', @portfolio, method: :delete, data: { confirm: 'Are you sure?' } %>
-</p>
