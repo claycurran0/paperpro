@@ -5,7 +5,10 @@
 <% @market_value = @portfolio.market_value(@marks) %>
 
 <% if current_user == @portfolio.user %>
-  <%= render 'shared/trade', portfolio: @portfolio %>
+  <div class="float-right">
+    <%= render 'shared/trade', portfolio: @portfolio %>
+    <%= render 'shared/blog', portfolio: @portfolio %>
+  </div>
 <% end %>
 
 <div>

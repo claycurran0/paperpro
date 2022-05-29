@@ -3,7 +3,7 @@
 <% all_tickers = Asset.all.pluck(:ticker) %>
 <% quotes = BasicYahooFinance::Query.new.quotes(all_tickers) %>
 
-<table class="table table-sm table-hover shadow">
+<table class="table table-sm table-hover">
   <thead>
     <tr>
       <th>Rank</th>

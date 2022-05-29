@@ -14,6 +14,9 @@
  *= require_self
  */
 
+@import url('//fonts.googleapis.com/css?family=Frank+Ruhl+Libre:400,700,900&display=swap');
+@import url('//fonts.googleapis.com/css?family=DM+Sans:400,700,900&display=swap');
+
 .post-timestamp {
   color: red;
 }
@@ -21,4 +24,25 @@
 .post-body {
   padding-top: 10px;
   font-family: serif;
+}
+
+.writing {
+  font-family: 'Frank Ruhl Libre';
+  font-size: 23px;
+}
+
+.discover-title {
+  font-family: 'Frank Ruhl Libre';
+  font-size: 23px;
+  font-weight: bold;
+  color:black;
+}
+
+.dm-sans {
+  font-family: 'DM Sans';
+  font-size: 15px;
+}
+
+.body {
+  font-family: 'DM Sans';
 }
