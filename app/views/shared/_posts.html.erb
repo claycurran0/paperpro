@@ -2,10 +2,13 @@
 
 <% @posts = Post.all %>
 
-  <% @posts.each do |post| %>
-    <div class="pt-3">
+
+<div class="card-columns">
+  <% @posts.order(:created_at).reverse.each do |post| %>
+    <div>
       <%= render 'shared/post', post: post %>
     </div>
   <% end %>
+</div>
 
 <br>

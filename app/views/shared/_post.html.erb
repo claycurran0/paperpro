@@ -1,8 +1,11 @@
-<div class="card" style="width: 18rem;">
+<div class="card">
   <div class="card-body">
     <h5 class="card-title discover-title"><%= link_to post.title, post %></h5>
-    <h6 class="card-subtitle mb-2 text-muted dm-sans"><%= post.author.username %></h6>
-    <p class="card-text dm-sans"><%= post.subtitle %></p>
+    <div class="d-flex align-items-center pb-3">
+      <%= image_tag post.author.image_url, class: "rounded-circle", width: 20, height: 20 %>
+      <div class="text-muted card-username p-1">@<%= post.author.username.downcase %></div>
+    </div>
+    <p class="card-text text-muted dm-sans"><%= post.subtitle %></p>
     <div class="post-timestamp dm-sans float-right">
       <p>
         <%= time_ago_in_words(post.created_at) %> ago
