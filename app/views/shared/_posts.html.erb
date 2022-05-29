@@ -1,0 +1,11 @@
+<h1>Discover</h1>
+
+<% @posts = Post.all %>
+
+  <% @posts.each do |post| %>
+    <div class="pt-3">
+      <%= render 'shared/post', post: post %>
+    </div>
+  <% end %>
+
+<br>

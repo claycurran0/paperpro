@@ -21,18 +21,20 @@ class Portfolio < ApplicationRecord
 
   def holdings
     holdings = []
-    tickers = []
 
     Asset.all.each do |a|
       quantity = Trade.where({ :portfolio_id => self.id, :asset_id => a.id}).sum(:quantity)
       if quantity > 0
         output = { :asset => a, :quantity => quantity }
         holdings.push(output)
-        tickers.push(a.ticker) 
       end
     end
+    return holdings
+  end
 
-    quotes = quotes(tickers)
+  def marks(quotes)
+
+    holdings = self.holdings
 
     holdings.each do |h|
       ticker = h[:asset].ticker
@@ -44,9 +46,27 @@ class Portfolio < ApplicationRecord
     return holdings
   end
 
-  def market_value(holdings)
-    market_value = holdings.map { |h| h[:market_value] }.sum
+  def tickers
+    holdings = self.holdings
+    tickers = []
+    holdings.each do |h|
+      ticker = h[:asset][:ticker]
+      tickers.push(ticker)
+    end
+    return tickers
+  end
+
+  def market_value(marks)
+    market_value = marks.map { |h| h[:market_value] }.sum
     return market_value
+  end
+
+  def total_return_percentage(marks)
+    mv = self.market_value(marks)
+    cash = self.cash_balance
+    total_return = mv + cash - 1000000
+    trp = total_return / 1000000
+    return trp
   end
 
 end

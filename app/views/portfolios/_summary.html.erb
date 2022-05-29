@@ -1,6 +1,8 @@
 <div class="pt-3">
 </div>
 
+
+
 <h3>
   Portfolio Overview
 </h3>
@@ -54,7 +56,7 @@
     </tr>
   </thead>
   <tbody>
-    <% @holdings.sort_by { |hsh| hsh[:market_value] }.reverse.each do |h| %>
+    <% @marks.sort_by { |hsh| hsh[:market_value] }.reverse.each do |h| %>
     <tr>
       <td>
         <%= h[:asset].name %></a>
@@ -70,6 +72,9 @@
       </td>
       <td>
         <%= number_to_currency(h[:market_value]) %></a>
+      </td>
+      <td>
+        <%= number_to_percentage(h[:market_value] / (@market_value + @portfolio.cash_balance)) %></a>
       </td>
     </tr>
     <% end %>

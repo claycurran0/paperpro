@@ -1,5 +1,8 @@
 <% @holdings = @portfolio.holdings %>
-<% @market_value = @portfolio.market_value(@holdings)%>
+<% tickers = @portfolio.tickers %>
+<% quotes =  BasicYahooFinance::Query.new.quotes(tickers) %>
+<% @marks = @portfolio.marks(quotes) %>
+<% @market_value = @portfolio.market_value(@marks) %>
 
 <% if current_user == @portfolio.user %>
   <%= render 'shared/trade', portfolio: @portfolio %>
@@ -19,5 +22,6 @@
 
 <p>
   <%= link_to 'Edit', edit_portfolio_path(@portfolio) %> |
-  <%= link_to 'Back', portfolios_path %>
+  <%= link_to 'Back', portfolios_path %> |
+  <%= link_to 'Delete Portfolio', @portfolio, method: :delete, data: { confirm: 'Are you sure?' } %>
 </p>

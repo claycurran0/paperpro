@@ -1,0 +1,27 @@
+<h1>Ongoing Competitions</h1>
+
+<% all_tickers = Asset.all.pluck(:ticker) %>
+<% quotes = BasicYahooFinance::Query.new.quotes(all_tickers) %>
+
+<table class="table table-sm table-hover shadow">
+  <thead>
+    <tr>
+      <th>Rank</th>
+      <th>Manager</th>
+      <th>Portfolio</th>
+      <th>Total Return</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @portfolios.each do |portfolio| %>
+    <% m = portfolio.marks(quotes) %>
+      <tr>
+        <td>Rank</td>
+        <td><%= portfolio.user.username %></td>
+        <td><%= link_to portfolio.name, portfolio %></td>
+        <td><%= number_to_percentage(portfolio.total_return_percentage(m)) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
