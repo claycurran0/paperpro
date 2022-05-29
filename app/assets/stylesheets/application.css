@@ -38,6 +38,13 @@
   color:black;
 }
 
+.contest-title {
+  font-family: 'Frank Ruhl Libre';
+  font-size: 18px;
+  font-weight: bold;
+  color:black;
+}
+
 .dm-sans {
   font-family: 'DM Sans';
   font-size: 15px;
