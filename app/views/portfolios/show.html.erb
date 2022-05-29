@@ -6,22 +6,22 @@
 
 <div class="d-flex flex-row">
   <div class="col-md-8">
-
-    <% if current_user == @portfolio.user %>
-      <div class="float-right">
-        <%= render 'shared/trade', portfolio: @portfolio %>
-        <%= render 'shared/blog', portfolio: @portfolio %>
-      </div>
-    <% end %>
-
     <div>
-      <h1>
-        <strong>
-          <%= @portfolio.name %>
-        </strong>
-      </h1>
-    </div>
+      <% if current_user == @portfolio.user %>
+        <div class="float-right">
+          <%= render 'shared/trade', portfolio: @portfolio %>
+          <%= render 'shared/blog', portfolio: @portfolio %>
+        </div>
+      <% end %>
 
+      <div>
+        <h1>
+          <strong>
+            <%= @portfolio.name %>
+          </strong>
+        </h1>
+      </div>
+    </div>
     <div class="pt-3">
       <%= render 'navbar', portfolio: @portfolio %>
     </div>

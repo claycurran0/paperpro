@@ -29,7 +29,7 @@
 
 .writing {
   font-family: 'Frank Ruhl Libre';
-  font-size: 21px;
+  font-size: 20px;
 }
 
 .discover-title {
@@ -74,7 +74,7 @@
 
 .body-sm {
   font-family: 'DM Sans';
-  font-size: 12px;
+  font-size: 12px !important;
 }
 
 .frank-ruhl-libre {
@@ -113,4 +113,9 @@ a:link, a:visited {
 
 .text-white {
   color: white;
+}
+
+.button-rounded {
+  border-radius: 33px !important;
+  font-size: 13px !important;
 }
