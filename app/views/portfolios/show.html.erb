@@ -8,8 +8,10 @@
   <div class="col-md-8">
     <div>
       <% if current_user == @portfolio.user %>
-        <div class="float-right">
+        <div class="float-right pl-2">
           <%= render 'shared/trade', portfolio: @portfolio %>
+        </div>
+        <div class="float-right">
           <%= render 'shared/blog', portfolio: @portfolio %>
         </div>
       <% else %>

@@ -127,3 +127,14 @@ a:link, a:visited {
 .summary-headers {
   font-size: 20px;
 }
+.btn-primary {
+  color: white !important;
+  background-color:  #FE666D !important;
+  border-color:  #FE666D !important;
+}
+
+.btn-primary:hover {
+  color: white !important;
+  background-color: #dd5058 !important;
+  border-color:  #dd5058 !important;
+}

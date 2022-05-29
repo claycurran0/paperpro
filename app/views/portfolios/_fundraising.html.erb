@@ -5,8 +5,14 @@
   <strong><%= portfolio.name %></strong> is currently raising capital! <u>Learn about investing.</u>
 </div>
 
+<% if @portfolio.user.image_url != nil %>
+  <% profile_pic = @portfolio.user.image_url %>
+<% else %>
+  <% profile_pic = "https://robohash.org/somephoto" %>
+<% end %>
+
 <p>
-  <%= image_tag @portfolio.user.image_url, class: "rounded-circle mr-3", width: 50 %>
+  <%= image_tag profile_pic, class: "rounded-circle mr-3", width: 50 %>
 </p>
 
 <p>
