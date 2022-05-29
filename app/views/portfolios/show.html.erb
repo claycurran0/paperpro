@@ -1,7 +1,7 @@
 <% @holdings = @portfolio.holdings %>
 <% tickers = @portfolio.tickers %>
-<% quotes =  BasicYahooFinance::Query.new.quotes(tickers) %>
-<% @marks = @portfolio.marks(quotes) %>
+<% @quotes =  BasicYahooFinance::Query.new.quotes(tickers) %>
+<% @marks = @portfolio.marks(@quotes) %>
 <% @market_value = @portfolio.market_value(@marks) %>
 
 <div class="d-flex flex-row">

@@ -3,8 +3,6 @@
 <% all_tickers = Asset.all.pluck(:ticker) %>
 <% quotes = BasicYahooFinance::Query.new.quotes(all_tickers) %>
 
-
-
 <div class="pt-3">
 
   <div class="contest-title pb-2"> 
@@ -19,18 +17,17 @@
     <thead>
       <tr>
         <th>Rank</th>
-        <th>Manager</th>
         <th>Portfolio</th>
         <th>Total Return</th>
       </tr>
     </thead>
 
-    <tbody>
-      <% @portfolios.each do |portfolio| %>
+    <tbody> 
+      <% rank = 0 %>
+      <% @portfolios.sort_by {|p| p.total_value(quotes) }.reverse.each do |portfolio| %>
       <% m = portfolio.marks(quotes) %>
         <tr>
-          <td>Rank</td>
-          <td>@<%= portfolio.user.username.downcase %></td>
+          <td><%= rank += 1 %></td>
           <td><%= link_to portfolio.name, portfolio %></td>
           <td><%= number_to_percentage(portfolio.total_return_percentage(m)) %></td>
         </tr>

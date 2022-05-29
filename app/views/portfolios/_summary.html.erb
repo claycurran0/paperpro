@@ -14,7 +14,7 @@
         Market Value of Holdings: <%= number_to_currency(@market_value) %>
       </li>
       <li>
-        Portfolio Value: <%= number_to_currency(@market_value + @portfolio.cash_balance) %>
+        Portfolio Value: <%= number_to_currency(@portfolio.total_value(@quotes)) %>
       </li>
     </ul>
   </p>
@@ -74,7 +74,7 @@
         <%= number_to_currency(h[:market_value]) %></a>
       </td>
       <td>
-        <%= number_to_percentage(h[:market_value] / (@market_value + @portfolio.cash_balance)) %></a>
+        <%= number_to_percentage(h[:market_value] / (@market_value + @portfolio.cash_balance) * 100 ) %></a>
       </td>
     </tr>
     <% end %>

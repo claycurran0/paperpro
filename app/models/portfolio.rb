@@ -2,6 +2,7 @@ class Portfolio < ApplicationRecord
   belongs_to :user
   has_many :trades
   has_many :posts
+  has_many :assets, through: :trades
 
   def cash_balance
     balance = 1000000
@@ -22,7 +23,9 @@ class Portfolio < ApplicationRecord
   def holdings
     holdings = []
 
-    Asset.all.each do |a|
+    assets = self.assets.distinct
+
+    assets.each do |a|
       quantity = Trade.where({ :portfolio_id => self.id, :asset_id => a.id}).sum(:quantity)
       if quantity > 0
         output = { :asset => a, :quantity => quantity }
@@ -67,6 +70,12 @@ class Portfolio < ApplicationRecord
     total_return = mv + cash - 1000000
     trp = total_return / 1000000
     return trp
+  end
+
+  def total_value(quotes)
+    marks = marks(quotes)
+    mv = market_value(marks)
+    tv = mv + self.cash_balance
   end
 
 end
