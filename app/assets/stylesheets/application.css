@@ -23,7 +23,7 @@
 
 .post-body {
   padding-top: 10px;
-  font-family: serif;
+  font-family: 'DM Sans';
 }
 
 .writing {
@@ -45,4 +45,16 @@
 
 .body {
   font-family: 'DM Sans';
+}
+
+.homepage-titles {
+  font-family: 'DM Sans';
+  font-size: 23px;
+  font-weight: bold;
+}
+
+.card-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
 }

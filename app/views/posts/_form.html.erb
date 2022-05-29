@@ -11,29 +11,26 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :title %>
-    <%= form.text_area :title %>
+    <%= form.text_field :title, class:"form-control" %>
+    <small id="helperText" class="form-text text-muted">Pick something exciting!</small>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :subtitle %>
-    <%= form.text_area :subtitle %>
+    <%= form.text_field :subtitle, class:"form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :body %>
-    <%= form.text_area :body %>
+    <%= form.text_area :body, class:"form-control" %>
   </div>
 
-  <div class="field">
-    <%= form.label :portfolio %>
-    <%= form.text_field :portfolio %>
-  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
 
   <div class="field">
-    <%= form.label :image_url %>
-    <%= form.text_field :image_url %>
+    <%= form.text_field :portfolio_id, type:"hidden" %>
   </div>
 
   <div class="actions">
