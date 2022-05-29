@@ -3,6 +3,8 @@
 <% all_tickers = Asset.all.pluck(:ticker) %>
 <% quotes = BasicYahooFinance::Query.new.quotes(all_tickers) %>
 
+
+
 <div class="pt-3">
 
   <div class="contest-title pb-2"> 
