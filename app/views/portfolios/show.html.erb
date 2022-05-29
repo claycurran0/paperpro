@@ -12,10 +12,14 @@
           <%= render 'shared/trade', portfolio: @portfolio %>
           <%= render 'shared/blog', portfolio: @portfolio %>
         </div>
+      <% else %>
+        <div class="float-right">
+          <%= render 'shared/invest', portfolio: @portfolio %>
+        </div>
       <% end %>
 
       <div>
-        <h1>
+        <h1 class="portfolio-name">
           <strong>
             <%= @portfolio.name %>
           </strong>

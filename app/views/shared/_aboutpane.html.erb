@@ -33,7 +33,9 @@
 
   <% portfolio.posts.order(:created_at).reverse.each do |post| %>
     <div>
-      <%= render 'shared/post', post: post %>
+      <div class="card border-0">
+        <%= render 'shared/post', post: post %>
+      </div>
     </div>
   <% end %>
   

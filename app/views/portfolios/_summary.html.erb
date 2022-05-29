@@ -1,25 +1,27 @@
 <div class="pt-3">
 </div>
 
-<h3>
+<h3 class="summary-headers">
   <strong>Portfolio Overview</strong>
 </h3>
-<p>
-  <ul>
-    <li>
-      Current Cash Balance: <%= number_to_currency(@portfolio.cash_balance) %>   
-    </li>
-    <li>
-      Market Value of Holdings: <%= number_to_currency(@market_value) %>
-    </li>
-    <li>
-      Portfolio Value: <%= number_to_currency(@market_value + @portfolio.cash_balance) %>
-    </li>
-  </ul>
-</p>
+<div class="dm-sans">
+  <p>
+    <ul>
+      <li>
+        Current Cash Balance: <%= number_to_currency(@portfolio.cash_balance) %>   
+      </li>
+      <li>
+        Market Value of Holdings: <%= number_to_currency(@market_value) %>
+      </li>
+      <li>
+        Portfolio Value: <%= number_to_currency(@market_value + @portfolio.cash_balance) %>
+      </li>
+    </ul>
+  </p>
+</div>
 
 <div class="pt-3">
-  <h3>
+  <h3 class="summary-headers">
     <strong>Holdings</strong>
   </h3>
 </div>
@@ -57,7 +59,7 @@
     <% @marks.sort_by { |hsh| hsh[:market_value] }.reverse.each do |h| %>
     <tr>
       <td>
-        <%= h[:asset].name %></a>
+        <strong><%= h[:asset].name %></a></strong>
       </td>
        <td>
         <%= h[:asset].ticker %></a>
