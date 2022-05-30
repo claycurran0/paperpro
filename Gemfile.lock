@@ -342,7 +342,6 @@ GEM
     websocket-extensions (0.1.5)
     xpath (3.2.0)
       nokogiri (~> 1.8)
-    yahoo_finance (0.0.2)
     zeitwerk (2.5.4)
 
 PLATFORMS
@@ -385,7 +384,6 @@ DEPENDENCIES
   web_git!
   webdrivers
   webpacker (~> 5.0)
-  yahoo_finance
 
 RUBY VERSION
    ruby 3.0.3p157
