@@ -7,6 +7,8 @@ gem 'devise'
 
 gem 'basic_yahoo_finance'
 
+gem 'google-finance-ruby-client'
+
 gem 'chartkick'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'

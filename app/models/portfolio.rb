@@ -83,9 +83,9 @@ class Portfolio < ApplicationRecord
 
     marks = self.marks(quotes)
     marks.sort_by { |hsh| hsh[:market_value] }.reverse.each do |m|
-      ticker = m[:asset].ticker
+      labels = m[:asset].ticker
       mv = m[:market_value]
-      allocations[ticker] = mv
+      allocations[labels] = mv
     end
 
     allocations["Uninvested Cash"] = self.cash_balance
