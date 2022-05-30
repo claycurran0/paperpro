@@ -78,4 +78,18 @@ class Portfolio < ApplicationRecord
     tv = mv + self.cash_balance
   end
 
+  def mv_allocations(quotes)
+    allocations = {}
+
+    marks = self.marks(quotes)
+    marks.sort_by { |hsh| hsh[:market_value] }.reverse.each do |m|
+      ticker = m[:asset].ticker
+      mv = m[:market_value]
+      allocations[ticker] = mv
+    end
+
+    allocations["Uninvested Cash"] = self.cash_balance
+
+    return allocations
+  end
 end

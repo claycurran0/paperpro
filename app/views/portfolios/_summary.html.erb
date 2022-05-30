@@ -20,7 +20,7 @@
   </p>
 </div>
 
-<%= pie_chart Asset.group(:asset_type).count %>
+<%= pie_chart @portfolio.mv_allocations(@quotes), donut: true %>
 
 <div class="pt-3">
   <h3 class="summary-headers">

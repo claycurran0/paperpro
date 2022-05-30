@@ -126,8 +126,6 @@ GEM
       rchardet (~> 1.8)
     globalid (1.0.0)
       activesupport (>= 5.0)
-    groupdate (6.1.0)
-      activesupport (>= 5.2)
     i18n (1.10.0)
       concurrent-ruby (~> 1.0)
     jbuilder (2.11.5)
@@ -362,7 +360,6 @@ DEPENDENCIES
   capybara (>= 3.26)
   chartkick
   devise
-  groupdate
   jbuilder (~> 2.7)
   listen (~> 3.3)
   pg (~> 1.1)
