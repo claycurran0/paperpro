@@ -20,6 +20,8 @@
   </p>
 </div>
 
+<% stock = YahooFinance::Stock.quote("symbol") %>
+
 <%= pie_chart @portfolio.mv_allocations(@quotes), donut: true %>
 
 <div class="pt-3">

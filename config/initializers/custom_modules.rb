@@ -1,0 +1,1 @@
+require 'google-finance-ruby-client'

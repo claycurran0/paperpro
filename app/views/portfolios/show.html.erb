@@ -1,6 +1,6 @@
 <% @holdings = @portfolio.holdings %>
-<% tickers = @portfolio.tickers %>
-<% @quotes =  BasicYahooFinance::Query.new.quotes(tickers) %>
+<% @tickers = @portfolio.tickers %>
+<% @quotes =  BasicYahooFinance::Query.new.quotes(@tickers) %>
 <% @marks = @portfolio.marks(@quotes) %>
 <% @market_value = @portfolio.market_value(@marks) %>
 
