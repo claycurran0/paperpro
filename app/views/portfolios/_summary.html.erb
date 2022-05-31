@@ -57,13 +57,14 @@
       </table>
     </p>
   </div>
-
+  <div class="container">
   <%= pie_chart @portfolio.mv_allocations(@quotes), width: '100%', height: '180px', chartArea:{
-    left:0,
+    left:10,
     top: 0,
     width: '100%',
     height: '180px',
 } %>
+  </div>
 
 </div>
 
@@ -112,13 +113,13 @@
         <%= h[:asset].ticker %></a>
       </td>
       <td>
-        <%= h[:quantity] %></a>
+        <%= number_with_precision(h[:quantity], delimiter: ',', precision: 0) %></a>
       </td>
       <td>
         <%= number_to_currency(h[:current_price]) %></a>
       </td>
       <td>
-        <%= number_to_currency(h[:market_value]) %></a>
+        <%= number_to_currency(h[:market_value], precision: 0) %></a>
       </td>
       <td>
         <%= number_to_percentage(h[:market_value] / (@market_value + @portfolio.cash_balance) * 100 ) %></a>

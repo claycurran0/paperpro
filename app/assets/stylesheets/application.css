@@ -72,6 +72,11 @@
   font-family: 'DM Sans';
 }
 
+.body-md {
+  font-family: 'DM Sans';
+  font-size: 15px !important;
+}
+
 .body-sm {
   font-family: 'DM Sans';
   font-size: 12px !important;

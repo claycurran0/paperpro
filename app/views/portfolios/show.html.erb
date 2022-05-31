@@ -33,13 +33,14 @@
     </div>
 
     <% if current_user == @portfolio.user %>
-      <p>
-        <%= link_to 'Edit', edit_portfolio_path(@portfolio) %> |
-        <%= link_to 'Back', portfolios_path %> |
-        <%= link_to 'Delete Portfolio', @portfolio, method: :delete, data: { confirm: 'Are you sure?' } %>
-      </p>
+      <div class="body-sm">
+        <p>
+          <%= link_to 'Edit', edit_portfolio_path(@portfolio) %> |
+          <%= link_to 'Back', portfolios_path %> |
+          <%= link_to 'Delete Portfolio', @portfolio, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </p>
+      </div>
     <% end %>
-
   </div>
 
   <div class="col-6 col-md-4 border-left">

@@ -4,11 +4,13 @@
   <% profile_pic = "https://robohash.org/somephoto" %>
 <% end %>
 
+<% manager = portfolio.user %>
+
 <div class="container p-4">
   <div class="d-flex">
     <%= image_tag profile_pic, class: "rounded-circle", width: 50, height: 50 %>
     <div class="container">
-      <div class="about-pane-body pt-2 font-weight-bold"><%= link_to portfolio.user.username, portfolio.user.username %></div>
+      <div class="about-pane-body pt-2 font-weight-bold"><%= link_to manager.username, user_path(manager.username) %></div>
       <div class="text-muted body-sm">
         xxx followers
       </div>
