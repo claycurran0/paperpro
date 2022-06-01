@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   get "trades/index" => "trades#index"
 
+  get "assets/list" => "assets#list"
+
   devise_for :users
   resources :posts
   resources :portfolios

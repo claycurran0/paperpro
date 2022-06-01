@@ -25,6 +25,10 @@
               <% end %>
             </select>
 
+            <select class="form-control basic-autoselect" name="autocompleted-value"
+              placeholder="type to search..."
+              data-url="/assets/list.json" autocomplete="off"></select>
+
             <div>
               <label for="browser_quantity">Number of shares: </label>
               <input id="browser_quantity" type="text" name="input_quantity" placeholder="" class="form-control mb-2 mr-sm-2">
@@ -43,3 +47,7 @@
     </div>
   </div>
 </div>
+
+<script>
+  $('.basic-autoselect').autoComplete();
+</script>
