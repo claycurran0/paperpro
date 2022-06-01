@@ -1,0 +1,15 @@
+<h1 class="homepage-titles">Discover</h1>
+
+<% @posts = Post.all %>
+
+<div class="card-columns pt-3">
+  <% @posts.order(:created_at).reverse.each do |post| %>
+    <div>
+      <div class="card">
+        <%= render 'shared/post', post: post %>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<br>

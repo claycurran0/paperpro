@@ -13,3 +13,133 @@
  *= require_tree .
  *= require_self
  */
+
+@import url('//fonts.googleapis.com/css?family=Frank+Ruhl+Libre:400,700,900&display=swap');
+@import url('//fonts.googleapis.com/css?family=DM+Sans:400,700,900&display=swap');
+
+.post-timestamp {
+  color: red;
+  font-size: 12px;
+}
+
+.post-body {
+  padding-top: 10px;
+  font-family: 'DM Sans';
+}
+
+.writing {
+  font-family: 'Frank Ruhl Libre';
+  font-size: 20px;
+}
+
+.discover-title {
+  font-family: 'Frank Ruhl Libre';
+  font-size: 23px;
+  font-weight: bold;
+  color:black;
+  text-decoration: none;
+}
+
+.contest-title {
+  font-family: 'Frank Ruhl Libre';
+  font-size: 18px;
+  font-weight: bold;
+  color:black;
+}
+
+.dm-sans {
+  font-family: 'DM Sans';
+  font-size: 15px;
+}
+
+.dm-sans-sm {
+  font-family: 'DM Sans';
+  font-size: 12px;
+}
+
+.card-username {
+  font-family: 'DM Sans';
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.about-pane-body {
+  font-family: 'DM Sans';
+  font-size: 22px;
+}
+
+.body {
+  font-family: 'DM Sans';
+}
+
+.body-md {
+  font-family: 'DM Sans';
+  font-size: 15px !important;
+}
+
+.body-sm {
+  font-family: 'DM Sans';
+  font-size: 12px !important;
+}
+
+.frank-ruhl-libre {
+  font-family: 'Frank Ruhl Libre';
+}
+
+.frank-ruhl-libre-lg {
+  font-family: 'Frank Ruhl Libre';
+  font-size: 25px !important;
+}
+
+.homepage-titles {
+  font-family: 'DM Sans';
+  font-size: 23px;
+  font-weight: bold;
+}
+
+.form-query {
+  border-radius: 33px !important;
+  height: 36px !important;
+  width: 500px !important;
+  font-size: 14px !important;
+}
+
+a:link, a:visited {
+  color: black; 
+  text-decoration: none;
+  display: inline-block;
+  }
+  
+  a:hover, a:active {
+  color: black;
+  text-decoration: none;
+  display: inline-block;
+  }
+
+.text-white {
+  color: white;
+}
+
+.button-rounded {
+  border-radius: 33px !important;
+  font-size: 13px !important;
+}
+
+.portfolio-name {
+  font-size: 30px;
+}
+
+.summary-headers {
+  font-size: 20px;
+}
+.btn-primary {
+  color: white !important;
+  background-color:  #FE666D !important;
+  border-color:  #FE666D !important;
+}
+
+.btn-primary:hover {
+  color: white !important;
+  background-color: #dd5058 !important;
+  border-color:  #dd5058 !important;
+}

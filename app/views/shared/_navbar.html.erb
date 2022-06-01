@@ -1,0 +1,54 @@
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light mb-4 sticky-top">
+  <div class="container body">
+    <%= link_to "PaperPro", root_path, class: "navbar-brand frank-ruhl-libre-lg" %>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse pl-5" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <% if user_signed_in? %>
+          <li class="nav-item">
+            <form class="form-inline">
+              <input class="form-query form-control mr-sm-2" type="text" placeholder=" &#xF002;  Symbols, Authors, Keywords", style="font-family:DM Sans, FontAwesome">
+            </form>
+          </li>
+        <% end %>
+      </ul>
+      <ul class="navbar-nav">
+        <% if user_signed_in? %>
+          <li class="nav-item pr-3 pl-3">
+            <%= link_to portfolios_path, class: "nav-link" do %>
+              Leaderboards
+          <% end %>
+          </li>
+          <li class="nav-item pr-3 pl-3">
+            <%= link_to user_path(current_user.username), class: "nav-link" do %>
+              About
+            <% end %>
+          </li>
+          <li class="nav-item dropdown pl-3">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <%= current_user.username %>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <%= link_to "Edit profile", edit_user_registration_path, class: "dropdown-item" %>
+              <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+            </div>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to "Sign in", new_user_session_path, class: "nav-link" %>
+          </li>
+
+          <li class="nav-item">
+            <%= link_to "Sign up", new_user_registration_path, class: "nav-link" %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</nav>

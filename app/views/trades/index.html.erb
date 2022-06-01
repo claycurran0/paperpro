@@ -1,0 +1,7 @@
+<ul>
+  <% @trades.each do |t| %>
+    <li><%= t.asset_id %></li>
+  <% end %>
+</ul>
+
+<%= @trades.count %>

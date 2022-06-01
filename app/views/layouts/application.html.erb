@@ -1,16 +1,46 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>VanillaRails</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+  <div>
+    <head>
+      <title>VanillaRails</title>
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <%= csrf_meta_tags %>
+      <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+      <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+      <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-  <body>
-    <%= yield %>
-  </body>
+      <%= javascript_include_tag "https://www.gstatic.com/charts/loader.js" %>
+
+
+      <meta charset="utf-8">
+
+      <!-- Connect Bootstrap CSS -->
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+      <!-- Connect Bootstrap JavaScript and its dependencies -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+
+      <!-- Connect Font Awesome -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
+
+      <!-- Make it responsive to small screens -->
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    </head>
+
+    <body class="body">
+      <%= render "shared/navbar" %> 
+      <div class="container"> 
+        <% if notice.present? %>
+          <%= render "shared/flash", message: notice, css_class: "success" %>
+        <% end %>
+        <% if alert.present? %>
+          <%= render "shared/flash", message: alert, css_class: "danger" %>
+        <% end %>
+        <%= yield %>
+      </div>
+    </body>
+  </div>
 </html>

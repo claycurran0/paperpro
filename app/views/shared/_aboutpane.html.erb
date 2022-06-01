@@ -1,0 +1,51 @@
+<% if @portfolio.user.image_url != nil %>
+  <% profile_pic = @portfolio.user.image_url %>
+<% else %>
+  <% profile_pic = "https://robohash.org/somephoto" %>
+<% end %>
+
+<% manager = portfolio.user %>
+
+<div class="container p-4">
+  <div class="d-flex">
+    <%= image_tag profile_pic, class: "rounded-circle", width: 50, height: 50 %>
+    <div class="container">
+      <div class="about-pane-body pt-2 font-weight-bold"><%= link_to manager.username, user_path(manager.username) %></div>
+      <div class="text-muted body-sm">
+        xxx followers
+      </div>
+      <div class="text-muted body-sm pt-2">
+        <%= portfolio.user.bio %>
+      </div>
+    </div>
+  </div>
+
+  <div class="d-flex flex-row-reverse pt-2">
+    <div class="pl-2">  
+      <button type="button" class="btn btn-info button-rounded"><i class="fab fa-twitter"></i></i></button>
+    </div>
+    
+    <div class="pl-2">
+      <button type="button" class="btn btn-info button-rounded"><i class="fas fa-envelope"></i></button>
+    </div>
+
+    <div>
+      <button type="button" class="btn btn-info button-rounded" style="width: 100px">Follow</button>
+    </div>
+
+  </div>
+</div>
+
+<div class="container p-2">
+  <strong>Articles from <%= portfolio.user.username %></strong>
+
+  <% portfolio.posts.order(:created_at).reverse.each do |post| %>
+    <div>
+      <div class="card border-0">
+        <%= render 'shared/post', post: post %>
+      </div>
+    </div>
+  <% end %>
+  
+
+</div>

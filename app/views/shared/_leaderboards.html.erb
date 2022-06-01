@@ -1,0 +1,47 @@
+<h1 class="homepage-titles">Ongoing Competitions</h1>
+
+<% all_tickers = Asset.all.pluck(:ticker) %>
+<% quotes = BasicYahooFinance::Query.new.quotes(all_tickers) %>
+
+
+
+<div class="pt-3">
+
+  <div class="contest-title pb-2"> 
+    Q2 2022 Quarterly PaperPro Open 
+  </div>
+
+  <div class="alert alert-primary card-username pt-1 pb-1">
+    Prizes will be awarded on July 1st. <u>Learn more.</u>
+  </div>
+
+  <table class="table table-sm table-hover dm-sans small">
+    <thead>
+      <tr>
+        <th>Rank</th>
+        <th>Portfolio</th>
+        <th>Total Return</th>
+      </tr>
+    </thead>
+
+    <tbody> 
+      <% rank = 0 %>
+      <% @portfolios.sort_by {|p| p.total_value(quotes) }.reverse.each do |portfolio| %>
+      <% m = portfolio.marks(quotes) %>
+        <tr>
+          <td><%= rank += 1 %></td>
+          <td><%= link_to portfolio.name, portfolio %></td>
+          <td><%= number_to_percentage(portfolio.total_return_percentage(m)*100) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<div class="dm-sans-sm">
+  <%= link_to new_portfolio_path, class: "nav-link" do %>
+    <i class="fas fa-plus-circle"></i>
+
+    Create New Portfolio
+  <% end %>
+</div>

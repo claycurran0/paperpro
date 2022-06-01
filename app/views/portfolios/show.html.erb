@@ -1,0 +1,49 @@
+<% @holdings = @portfolio.holdings %>
+<% @tickers = @portfolio.tickers %>
+<% @quotes =  BasicYahooFinance::Query.new.quotes(@tickers) %>
+<% @marks = @portfolio.marks(@quotes) %>
+<% @market_value = @portfolio.market_value(@marks) %>
+
+<div class="d-flex flex-row">
+  <div class="col-md-8">
+    <div>
+      <% if current_user == @portfolio.user %>
+        <div class="float-right pl-2">
+          <%= render 'shared/trade', portfolio: @portfolio %>
+        </div>
+        <div class="float-right">
+          <%= render 'shared/blog', portfolio: @portfolio %>
+        </div>
+      <% else %>
+        <div class="float-right">
+          <%= render 'shared/invest', portfolio: @portfolio %>
+        </div>
+      <% end %>
+
+      <div>
+        <h1 class="portfolio-name">
+          <strong>
+            <%= @portfolio.name %>
+          </strong>
+        </h1>
+      </div>
+    </div>
+    <div class="pt-3">
+      <%= render 'navbar', portfolio: @portfolio %>
+    </div>
+
+    <% if current_user == @portfolio.user %>
+      <div class="body-sm">
+        <p>
+          <%= link_to 'Edit', edit_portfolio_path(@portfolio) %> |
+          <%= link_to 'Back', portfolios_path %> |
+          <%= link_to 'Delete Portfolio', @portfolio, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </p>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="col-6 col-md-4 border-left">
+    <%= render 'shared/aboutpane', portfolio: @portfolio %>
+  </div>
+</div>

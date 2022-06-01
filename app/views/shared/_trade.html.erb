@@ -1,0 +1,45 @@
+<div class="pb-1">
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary btn-sm button-rounded" style="width: 100px" data-toggle="modal" data-target="#tradeModal">
+    Trade
+  </button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="tradeModal" tabindex="-1" role="dialog" aria-labelledby="tradeModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="tradeModalLabel"><%= @portfolio.name %></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          
+          <form class="form-inline" action="/trades/new" id="form_trade" >
+            
+            <label for="browser_ticker">Pick an asset to trade: </label>
+            <select class="custom-select" name="input_ticker" id="browser_ticker">
+              <% Asset.all.order(:ticker).each do |my_asset| %>
+                <option value="<%= my_asset.ticker %>"><%= my_asset.ticker %></option>
+              <% end %>
+            </select>
+
+            <div>
+              <label for="browser_quantity">Number of shares: </label>
+              <input id="browser_quantity" type="text" name="input_quantity" placeholder="" class="form-control mb-2 mr-sm-2">
+            </div>
+
+            <input id="portfolio_id" type="hidden" name="portfolio_id" value="<%= @portfolio.id %>">
+
+          </form>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+          <button type="submit" form="form_trade" class="btn btn-primary">Trade</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
