@@ -31,7 +31,7 @@
         <tr>
           <td><%= rank += 1 %></td>
           <td><%= link_to portfolio.name, portfolio %></td>
-          <td><%= number_to_percentage(portfolio.total_return_percentage(m)) %></td>
+          <td><%= number_to_percentage(portfolio.total_return_percentage(m)*100) %></td>
         </tr>
       <% end %>
     </tbody>

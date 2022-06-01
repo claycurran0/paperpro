@@ -49,7 +49,7 @@
             </td>
             <td>
               <strong>
-              <%= number_to_percentage(@portfolio.total_value(@quotes)/1000000-1, precision: 2) %>
+              <%= number_to_percentage((@portfolio.total_value(@quotes)/1000000-1)*100, precision: 2) %>
               </strong>
             </td>
           </tr>
