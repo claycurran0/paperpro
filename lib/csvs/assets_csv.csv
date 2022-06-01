@@ -1,4 +1,4 @@
-ticker,name,type,image_url,,,,,,,,,
+ticker,name,asset_type,image_url,,,,,,,,,
 AAPL,Apple Inc.,stock,,,,,,,,,,
 MSFT,Microsoft Corporation,stock,,,,,,,,,,
 AMZN,Amazon.com Inc.,stock,,,,,,,,,,

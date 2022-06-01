@@ -11,7 +11,7 @@ namespace :slurp do
       a = Asset.new
       a.ticker = row["ticker"]
       a.name = row["name"]
-      a.type = row["type"]
+      a.asset_type = row["asset_type"]
       a.save
       puts "#{a.name} saved"
     end
