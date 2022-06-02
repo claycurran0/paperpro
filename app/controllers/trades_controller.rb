@@ -1,7 +1,10 @@
 class TradesController < ApplicationController
   def new
     query = BasicYahooFinance::Query.new
-    ticker = params.fetch("input_ticker")
+    input = params.fetch("input_ticker")
+    reversed_s = input.reverse;
+    reversed_s =~ /^.*?\)(.*?)\(/;
+    ticker = $1.reverse;
     asset_id = Asset.find_by(ticker: ticker).id
     data = query.quotes(ticker)
     price = data[ticker]['regularMarketPrice']

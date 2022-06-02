@@ -22,26 +22,16 @@
         </div>
         <div class="modal-body">
           
-          <form class="form-inline" action="/trades/new" id="form_trade" >
-            
-            <label for="browser_ticker">Pick an asset to trade: </label>
-            <select class="custom-select" name="input_ticker" id="browser_ticker">
-              <% Asset.all.order(:ticker).each do |my_asset| %>
-                <option value="<%= my_asset.ticker %>"><%= my_asset.ticker %></option>
-              <% end %>
-            </select>
+          <form class="form-inline" autocomplete="off" action="/trades/new" id="form_trade" >
 
             <!--Make sure the form has the autocomplete function switched off:-->
-            <form autocomplete="off" action="/action_page.php">
               <div class="autocomplete" style="width:300px;">
-                <input id="myInput" type="text" name="myCountry" placeholder="Country">
+                <input id="myInput" type="text" name="input_ticker" placeholder="Search for assets to trade...">
               </div>
-              <input type="submit">
-            </form>
 
             <div>
               <label for="browser_quantity">Number of shares: </label>
-              <input id="browser_quantity" type="text" name="input_quantity" placeholder="" class="form-control mb-2 mr-sm-2">
+              <input id="browser_quantity" type="text" name="input_quantity" placeholder="Enter a number of shares" class="form-control mb-2 mr-sm-2">
             </div>
 
             <input id="portfolio_id" type="hidden" name="portfolio_id" value="<%= @portfolio.id %>">
