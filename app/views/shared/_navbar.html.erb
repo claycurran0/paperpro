@@ -2,7 +2,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4 sticky-top">
   <div class="container body">
-    <%= link_to "PaperPro", root_path, class: "navbar-brand frank-ruhl-libre-lg black-text" %>
+    <%= link_to "PaperPro", root_path, class: "navbar-brand frank-ruhl-libre-lg redlink" %>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -21,22 +21,22 @@
       <ul class="navbar-nav">
         <% if user_signed_in? %>
           <li class="nav-item pr-3 pl-3">
-            <%= link_to portfolios_path, class: "nav-link" do %>
+            <%= link_to portfolios_path, class: "nav-link redlink" do %>
               Leaderboards
           <% end %>
           </li>
           <li class="nav-item pr-3 pl-3">
-            <%= link_to user_path(current_user.username), class: "nav-link" do %>
+            <%= link_to user_path(current_user.username), class: "nav-link redlink" do %>
               About
             <% end %>
           </li>
           <li class="nav-item dropdown pl-3">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="nav-link dropdown-toggle redlink" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <%= current_user.username %>
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <%= link_to "Edit profile", edit_user_registration_path, class: "dropdown-item" %>
-              <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+              <%= link_to "Edit profile", edit_user_registration_path, class: "dropdown-item redlink" %>
+              <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "dropdown-item redlink" %>
             </div>
           </li>
         <% else %>

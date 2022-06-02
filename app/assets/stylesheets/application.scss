@@ -31,7 +31,12 @@
 
 .writing {
   font-family: 'Frank Ruhl Libre';
-  font-size: 20px;
+  font-size: 18px;
+}
+
+.subtitle {
+  font-size: 15px;
+  color: gray;
 }
 
 .discover-title {
@@ -106,21 +111,56 @@
   font-size: 14px !important;
 }
 
-a:link, a:visited {
-  color:black; 
-  text-decoration: none;
-  display: inline-block;
-  }
-  
-a:hover, a:active {
-  color: #FE666D;
-  text-decoration: none;
+a.whitelink:link, a.whitelink:visited {
+  color:white !important; 
+  text-decoration: none !important;
   display: inline-block;
   }
 
-.text-white {
-  color: white;
-}
+a.whitelink:hover, a.whitelink:active {
+  color: white !important;
+  text-decoration: none !important;
+  display: inline-block;
+  }
+
+a.redlink:link, a.redlink:visited {
+  color:black !important; 
+  text-decoration: none !important;
+  display: inline-block;
+  }
+
+a.redlink:hover, a.redlink:active {
+  color: #FE666D !important;
+  text-decoration: none !important;
+  display: inline-block;
+  }
+
+a.bluelink:link, a.bluelink:visited {
+  color:black !important; 
+  text-decoration: none !important;
+  display: inline-block;
+  }
+
+a.bluelink:hover, a.bluelink:active {
+  color: blue !important;
+  text-decoration: none !important;
+  display: inline-block;
+  }
+
+a:link, a:visited {
+  color:#0274b6 !important; 
+  text-decoration: underline !important;
+  display: inline-block;
+  }
+
+a:hover, a:active {
+  color: #0274b6 !important;
+  text-decoration: none !important;
+  display: inline-block;
+  }
+  
+
+
 
 .button-rounded {
   border-radius: 33px !important;

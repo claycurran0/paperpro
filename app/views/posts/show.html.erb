@@ -1,26 +1,39 @@
-<p id="notice"><%= notice %></p>
+<% if @post.author.image_url != nil %>
+  <% profile_pic = @post.author.image_url %>
+<% else %>
+  <% profile_pic = "https://robohash.org/somephoto" %>
+<% end %>
 
-  <h3>
-    <%= @post.title %>
-  </h3>
-  <div>
-    <div class="text-black-50">
-      <p>
-        <%= @post.subtitle %>
-      </p>
-    </div>
+<h3>
+  <strong><%= @post.title %></strong
+</h3>
+<div>
+  <div class="subtitle pt-2">
+    <%= @post.subtitle %>
+  </div>
 
-    <div class="post-timestamp">
-      <p>
-        <%= time_ago_in_words(@post.created_at) %> ago
-      </p>
-    </div>
-    
-    <div class="writing">
-      <p>
-        <%= @post.body%>
-      </p>
-    </div>
+  <div class="body-md pt-2">
+    <i>By <%= link_to @post.author.username, user_path(@post.author.username) %></i>
+  </div>
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+  <div class="post-timestamp pt-2">
+    <p>
+          <i class="far fa-clock fa-fw"></i></i>
+          <%= time_ago_in_words(@post.created_at) %> ago
+    </p>
+  </div>
+  
+  <div class="writing bluelink pt-3 pb-3">
+    <p>
+      <%= @post.body%>
+    </p>
+  </div>
+
+<% if current_user == @post.author %>
+  <div class="body-sm">
+    <%= link_to 'Edit Post', edit_post_path(@post) %>
+  </div>
+<% end %>
+
+<div class="pt-3">
+</div>
