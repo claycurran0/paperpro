@@ -4,4 +4,7 @@ class Post < ApplicationRecord
     :through => :portfolio,
     :source => :user
   )
+
+  has_rich_text :body
+
 end
