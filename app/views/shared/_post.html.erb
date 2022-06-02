@@ -5,10 +5,10 @@
 <% end %>
 
 <div class="card-body">
-  <h5 class="card-title discover-title"><%= link_to post.title, post %></h5>
+  <h5 class="card-title discover-title"><%= link_to post.title, post, class:"black-text" %></h5>
   <div class="d-flex align-items-center pb-3">
     <%= image_tag profile_pic, class: "rounded-circle", width: 20, height: 20 %>
-    <div class="card-username p-1"><%= link_to post.author.username, post.author.username %></div>
+    <div class="card-username p-1"><%= link_to post.author.username, post.author.username, class:"black-text" %></div>
   </div>
   <div class="card-text text-muted dm-sans"><%= post.subtitle %></div>
   <div class="post-timestamp float-right">
