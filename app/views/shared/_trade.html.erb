@@ -34,6 +34,8 @@
               <input id="browser_quantity" type="text" name="input_quantity" placeholder="Enter a number of shares" class="form-control mb-2 mr-sm-2">
             </div>
 
+            <input id="live_price" value=15 type="hidden">
+
             <div class="custom-control custom-radio">
               <input type="radio" id="buy" value="buy" name="tradeType" class="custom-control-input">
               <label class="custom-control-label" for="buy">Buy</label>
@@ -42,6 +44,11 @@
               <input type="radio" id="sell" value="sell" name="tradeType" class="custom-control-input">
               <label class="custom-control-label" for="sell">Sell</label>
             </div>
+
+              <br /><br />
+              Total: <span id="total_expenses1"></span>
+              <br />
+              Ticker: <span id="my_ticker"></span>
 
             <input id="portfolio_id" type="hidden" name="portfolio_id" value="<%= @portfolio.id %>">
 
@@ -56,6 +63,19 @@
     </div>
   </div>
 </div>
+
+<script>
+$('input').keyup(function(){ // run anytime the value changes
+    var firstValue  = Number($('#browser_quantity').val());   // get value of field
+    var ticker  = $('#myInput').val().match(/\(([^)]+)\)/)[1];   // get value of field
+    var secondValue = Number($('#live_price').val()); // convert it to a float
+    var price = Number("<%= BasicYahooFinance::Query.new.quotes("AAPL")["AAPL"]['regularMarketPrice'] %>")
+
+    $('#total_expenses1').html(firstValue * secondValue); // add them and output it
+    $('#my_ticker').html(price);
+});
+
+</script>
 
 <script>
   var countries = <%= @my_assets.to_json.html_safe %>;

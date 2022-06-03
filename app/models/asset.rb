@@ -15,4 +15,6 @@ class Asset < ApplicationRecord
 
     return prices
   end
+
+
 end

@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   root "portfolios#index"
 
+  get "about" => "pages#about", as: :about
 
   get "trades/index" => "trades#index"
 

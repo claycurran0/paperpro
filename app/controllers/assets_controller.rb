@@ -12,5 +12,12 @@ class AssetsController < ApplicationController
     render json: database_records
   end
 
+  def price(ticker)
+    query = BasicYahooFinance::Query.new
+    my_quote = query.quotes(ticker)
+    price = my_quote['regularMarketPrice']
+    return price
+  end
+
 end
 

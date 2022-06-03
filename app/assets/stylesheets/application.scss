@@ -135,6 +135,18 @@ a.redlink:hover, a.redlink:active {
   display: inline-block;
   }
 
+a.redlink-secondary:link, a.redlink-secondary:visited {
+  color:grey !important; 
+  text-decoration: none !important;
+  display: inline-block;
+  }
+
+a.redlink-secondary:hover, a.redlink-secondary:active {
+  color: #FE666D !important;
+  text-decoration: none !important;
+  display: inline-block;
+  }
+
 a.bluelink:link, a.bluelink:visited {
   color:black !important; 
   text-decoration: none !important;

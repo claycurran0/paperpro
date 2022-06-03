@@ -1,7 +1,7 @@
 class Portfolio < ApplicationRecord
   belongs_to :user
-  has_many :trades
-  has_many :posts
+  has_many :trades, dependent: :destroy
+  has_many :posts, dependent: :destroy
   has_many :assets, through: :trades
 
   def cash_balance
