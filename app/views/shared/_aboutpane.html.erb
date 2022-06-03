@@ -12,7 +12,7 @@
     <div class="container">
       <div class="about-pane-body pt-2 font-weight-bold"><%= link_to manager.username, user_path(manager.username), class:"redlink" %></div>
       <div class="text-muted body-sm">
-        xxx followers
+        <%= @portfolio.user.followers.count %> follower<%= @portfolio.user.followers.count == 1 ? "" : "s" %>
       </div>
       <div class="text-muted body-sm pt-2">
         <%= portfolio.user.bio %>
@@ -30,7 +30,7 @@
     </div>
 
     <div>
-      <button type="button" class="btn btn-info button-rounded" style="width: 100px">Follow</button>
+      <%= link_to "Follow", new_follow_path( :leader_id => @portfolio.user.id ), class:"btn btn-info button-rounded whitelink", style:"width:100px" %>
     </div>
 
   </div>
@@ -46,6 +46,4 @@
       </div>
     </div>
   <% end %>
-  
-
 </div>

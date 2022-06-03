@@ -30,7 +30,7 @@
       <% m = portfolio.marks(quotes) %>
         <tr>
           <td><%= rank += 1 %></td>
-          <td><%= link_to portfolio.name, portfolio, class:"bluelink" %></td>
+          <td><%= link_to portfolio.name, portfolio, class:"redlink" %></td>
           <td><%= number_to_percentage(portfolio.total_return_percentage(m)*100, precision: 2) %></td>
         </tr>
       <% end %>

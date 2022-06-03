@@ -1,5 +1,11 @@
+<% if @user.image_url != nil %>
+  <% profile_pic = @user.image_url %>
+<% else %>
+  <% profile_pic = "https://robohash.org/somephoto" %>
+<% end %>
+
 <div>
-  <%= image_tag @user.image_url, class: "rounded-circle", width: 100, height: 100 %>
+  <%= image_tag profile_pic, class: "rounded-circle", width: 100, height: 100 %>
 </div>
 
 <div>

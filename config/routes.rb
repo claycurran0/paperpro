@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   get "assets/list" => "assets#list"
 
+  get "create_follow" => "follows#new", as: :new_follow
+
   devise_for :users
   resources :posts
   resources :portfolios
