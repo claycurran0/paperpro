@@ -57,13 +57,14 @@
       </table>
     </p>
   </div>
+
   <div class="container">
-  <%= pie_chart @portfolio.mv_allocations(@quotes), width: '100%', height: '180px', chartArea:{
-    left:10,
-    top: 0,
-    width: '100%',
-    height: '180px',
-} %>
+    <%= pie_chart @portfolio.mv_allocations(@quotes), width: '100%', height: '180px', chartArea:{
+      left:10,
+      top: 0,
+      width: '90%',
+      height: '180px',
+      } %>
   </div>
 
 </div>

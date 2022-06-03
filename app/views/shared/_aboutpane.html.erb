@@ -22,7 +22,13 @@
 
   <div class="d-flex flex-row-reverse pt-3">
     <div class="pl-2">  
-      <button type="button" class="btn btn-info button-rounded"><i class="fab fa-twitter"></i></i></button>
+      <div class="btn btn-info button-rounded">
+        <%= link_to @portfolio.user.twitter_url do %>
+          <div>
+            <i class="fab fa-twitter" style="color:white""></i>
+          </div>
+        <% end %>
+      </div>
     </div>
     
     <div class="pl-2">
