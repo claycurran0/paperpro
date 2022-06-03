@@ -34,6 +34,15 @@
               <input id="browser_quantity" type="text" name="input_quantity" placeholder="Enter a number of shares" class="form-control mb-2 mr-sm-2">
             </div>
 
+            <div class="custom-control custom-radio">
+              <input type="radio" id="buy" value="buy" name="tradeType" class="custom-control-input">
+              <label class="custom-control-label" for="buy">Buy</label>
+            </div>
+            <div class="custom-control custom-radio">
+              <input type="radio" id="sell" value="sell" name="tradeType" class="custom-control-input">
+              <label class="custom-control-label" for="sell">Sell</label>
+            </div>
+
             <input id="portfolio_id" type="hidden" name="portfolio_id" value="<%= @portfolio.id %>">
 
           </form>

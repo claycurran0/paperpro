@@ -1,9 +1,3 @@
-<% if @post.author.image_url != nil %>
-  <% profile_pic = @post.author.image_url %>
-<% else %>
-  <% profile_pic = "https://robohash.org/somephoto" %>
-<% end %>
-
 <h3>
   <strong><%= @post.title %></strong
 </h3>
@@ -12,14 +6,14 @@
     <%= @post.subtitle %>
   </div>
 
-  <div class="body-md pt-2">
+  <div class="body-md pt-3">
     <i>By <%= link_to @post.author.username, user_path(@post.author.username) %></i>
   </div>
 
   <div class="post-timestamp pt-2">
     <p>
-          <i class="far fa-clock fa-fw"></i></i>
-          <%= time_ago_in_words(@post.created_at) %> ago
+      <i class="far fa-clock fa-fw"></i></i>
+      <%= time_ago_in_words(@post.created_at) %> ago
     </p>
   </div>
   
