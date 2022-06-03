@@ -11,6 +11,10 @@
       <th>
         Ticker
       </th>
+      
+      <th>
+        Buy/Sell
+      </th>
 
       <th>
         Shares
@@ -38,13 +42,16 @@
         <%= t.asset.ticker %></a>
       </td>
       <td>
-        <%= t.quantity %></a>
+        <%= t.quantity > 0 ? "Buy" : "Sell" %></a>
+      </td>
+      <td>
+        <%= t.quantity.abs %></a>
       </td>
       <td>
         <%= number_to_currency(t.price) %></a>
       </td>
       <td>
-        <%= number_to_currency(t.price * t.quantity) %></a>
+        <%= number_to_currency(t.price * t.quantity.abs) %></a>
       </td>
       <td>
         <%= t.created_at.to_formatted_s(:short)  %></a>
