@@ -42,13 +42,13 @@
               <input type="radio" id="sell" value="sell" name="tradeType" class="custom-control-input">
               <label class="custom-control-label" for="sell">Sell</label>
             </div>
-            <div class="body-md">
+            <div class="body-sm">
               <br />
               Cash Available: <%= number_to_currency(@portfolio.cash_balance) %>
               <br />
               Current Price: </span><span id="my_live_price"></span>
               <br/ >
-              Total Proceeds: <span id="total_proceeds"></span>
+              <div class="font-weight-bold">Total Proceeds: <span id="total_proceeds"></span></div>
               <br />
             </div>
               
