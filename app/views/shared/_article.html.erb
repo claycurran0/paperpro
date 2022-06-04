@@ -26,6 +26,7 @@
   <% if current_user == post.author %>
     <div class="body-sm">
       <%= link_to 'Edit Post', edit_post_path(post) %>
+      <%= link_to 'Delete Post', edit_post_path(post) %>
     </div>
   <% end %>
 
