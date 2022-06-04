@@ -12,11 +12,17 @@ class AssetsController < ApplicationController
     render json: database_records
   end
 
-  def price(ticker)
-    query = BasicYahooFinance::Query.new
-    my_quote = query.quotes(ticker)
-    price = my_quote['regularMarketPrice']
-    return price
+  def price
+    ticker = params.fetch("ticker")
+    @quantity = params.fetch("quantity").to_f
+    @price = BasicYahooFinance::Query.new.quotes(ticker)[ticker]['regularMarketPrice'].to_f
+    @proceeds = @price * @quantity
+    puts(@price)
+    respond_to do |format|
+      format.js do
+        render("assets/price.js.erb")
+      end
+    end
   end
 
 end
